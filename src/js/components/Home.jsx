@@ -6,10 +6,6 @@ import rigoImage from "../../img/rigo-baby.jpg";
 //create your first component
 const Home = (props) => {
 
-	const handleInputChange = (event) => {
-		props.onInputChange(event.target.value)
-	};
-
 	return (
 		<div className="text-center mt-5">
 			<h1 className="text-white">Counter</h1>
@@ -39,7 +35,7 @@ const Home = (props) => {
 			</div>
 			<br></br>
 			<input className="my-3" type="number" placeholder="0"
-				onChange={handleInputChange}></input>
+				onChange={(event) => props.onInputChange(event.target.value)}></input>
 			<button className="ms-2 btn btn-success" onClick={props.setTimerAction}>
 				Set timer</button>
 			<br></br>
